@@ -1,0 +1,64 @@
+html {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 20px;
+    font-size: 125%;
+    line-height: 1.4;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+footer {
+    margin-top: 50px;
+    border-top: 1px solid silver;
+    font-size: 0.8em;
+}
+
+footer ol {
+    padding-left: 20px;
+}
+
+/* Initializing a 'footnotes' counter on the wrapper */
+article {
+    counter-reset: footnotes;
+}
+
+/* Inline footnote references */
+a[aria-describedby="footnote-label"] {
+    counter-increment: footnotes;
+    text-decoration: none;
+    color: inherit;
+    cursor: default;
+    outline: none;
+}
+
+/* Actual numbered references */
+a[aria-describedby="footnote-label"]::after {
+    content: '[' counter(footnotes) ']';
+    vertical-align: super;
+    font-size: 0.5em;
+    margin-left: 2px;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Resetting the default focused styles on the number */
+a[aria-describedby="footnote-label"]:focus::after {
+    outline: thin dotted;
+    outline-offset: 2px;
+}
+
+footer :target {
+    background: yellow;
+}
+
+[aria-label="Back to content"] {
+    font-size: 0.8em;
+}

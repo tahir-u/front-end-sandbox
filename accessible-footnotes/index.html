@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Accessible Footnotes</title>
+
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <article>
+        <h1>CSS-Powered Footnotes</h1>
+        <p>
+            Maintaining <a aria-describedby="footnote-label" href="#footnotes" id="footnotes-ref">footnotes</a> manually can be a pain. By using
+            <a aria-describedby="footnote-label" href="#css" id="css-ref">CSS</a> <a aria-describedby="footnote-label" href="#css-counters" id="css-counters-ref">counters</a>
+            to add the numbered references in the text and an ordered list to display the actual footnotes in the footer, it becomes
+            extremely easy.
+        </p>
+        <footer>
+            <h2 id="footnote-label">Footnotes</h2>
+            <ol>
+                <li id="footnotes">
+                    Footnotes are notes placed at the bottom of a page. They cite references or
+                    comment on a designated part of the text above it.
+                    <a href="#footnotes-ref" aria-label="Back to content">↩</a>
+                </li>
+                <li id="css">
+                    Cascading Style Sheets
+                    <a href="#css-ref" aria-label="Back to content">↩</a>
+                </li>
+                <li id="css-counters">
+                    CSS counters are, in essence, variables maintained by CSS whose values may be
+                    incremented by CSS rules to track how many times they're used.
+                    <a href="#css-counters-ref" aria-label="Back to content">↩</a>
+                </li>
+            </ol>
+        </footer>
+    </article>
+</body>
+</html>
