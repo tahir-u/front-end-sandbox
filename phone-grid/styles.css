@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 110%;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 20px;
+  max-width: 400px;
+  margin: 24px auto;
+}
+
+.item {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: #ddd;
+  border-radius: 50px;
+}
+
+.item:hover {
+  background: #bbb;
+}
+
+/* Temp fix for blank sub on #1 */
+.item:first-child > .sub {
+  padding: 4px;
+}
+
+.sub {
+  font-size: 50%;
+}
