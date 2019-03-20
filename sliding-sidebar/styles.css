@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+#sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: -200px;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: .5s;
+}
+
+#sidenav > a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 24px;
+  color: #818181;
+  display: block;
+  transition: .3s;
+}
+
+#sidenav > a:hover {
+  color: #f1f1f1;
+}
+
+#sidenav > a.close {
+  position: absolute;
+  top: 0;
+  right: 24px;
+  font-size: 36px;
+  margin-left: 50px;
+}
