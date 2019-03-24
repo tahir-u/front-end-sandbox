@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+html,
+body {
+  background-color: #2962ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+.progress-ring__circle {
+  transition: stroke-dashoffset .35s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+#progress {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 40px;
+}
