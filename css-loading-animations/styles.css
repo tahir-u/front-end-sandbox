@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.circles {
+  width: 4em;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.circle {
+  width: .8em;
+  height: .8em;
+  border-radius: 50%;
+  background-color: #fc2f70;
+}
+
+.circle:nth-of-type(1) {
+  transform: translateX(-100%);
+  animation: left-swing .5s ease-in alternate infinite;
+}
+
+.circle:nth-of-type(3) {
+  transform: translateX(-95%);
+  animation: right-swing .5s ease-out alternate infinite;
+}
+
+@keyframes left-swing {
+  50%,
+  100% {
+    transform: translateX(95%);
+  }
+}
+
+@keyframes right-swing {
+  50% {
+    transform: translateX(-95%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.dots {
+  width: 3em;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.dot {
+  width: .8em;
+  height: .8em;
+  border-radius: 50%;
+  background-color: #fc2f70;
+  animation: fade .8s ease-in-out alternate infinite;
+}
+
+.dot:nth-of-type(1) {
+  animation-delay: -.4s;
+}
+
+.dot:nth-of-type(2) {
+  animation-delay: -.2s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.expanding-circle {
+  width: 2.5em;
+  height: 3em;
+  border: 3px solid transparent;
+  border-top-color: #fc2f70;
+  border-bottom-color: #fc2f70;
+  border-radius: 50%;
+  animation: spin-stretch 2s ease infinite;
+  margin-bottom: 2em;
+}
+
+@keyframes spin-stretch {
+  50% {
+    transform: rotate(360deg) scale(.4, .33);
+    border-width: 8px;
+  }
+  100% {
+    transform: rotate(720deg) scale(1, 1);
+    border-width: 3px;
+  }
+}
+
+.loading-ring {
+  margin-bottom: 2em;
+}
+
+.ring {
+  width: 3.75em;
+  transform-origin: center;
+  animation: rotate 2s linear infinite;
+}
+
+.ring > circle {
+  fill: none;
+  stroke: #fc2f70;
+  stroke-width: 2;
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dashoffset: -125px;
+  }
+}
+
+.loading-indicator {
+  width: 3em;
+  height: 3em;
+  border: 3px solid hsla(185, 100%, 62%, .2);
+  border-top-color: #3cefff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 2em;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
